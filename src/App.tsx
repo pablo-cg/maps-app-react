@@ -1,8 +1,14 @@
+import { MapProvider } from './context/map';
+import { PlacesProvider } from './context/places';
+import { HomePage } from './pages/home-page';
+
 function App() {
   return (
-    <div>
-      <h1>App</h1>
-    </div>
+    <PlacesProvider>
+      <MapProvider>
+        <HomePage />
+      </MapProvider>
+    </PlacesProvider>
   );
 }
 
