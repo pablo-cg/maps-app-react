@@ -18,8 +18,8 @@
 
 .my-location-btn {
   position: fixed;
-  top: 2rem;
-  right: 2rem;
+  bottom: 1.7rem;
+  right: 1rem;
   z-index: 9999;
   margin: 0;
 }
@@ -35,10 +35,21 @@
 }
 
 .btn-circle.btn-xl {
-  width: 70px;
-  height: 70px;
+  width: 60px;
+  height: 60px;
   padding: 10px 16px;
-  border-radius: 35px;
+  border-radius: 50%;
   font-size: 24px;
   line-height: 1.33;
+}
+
+.search-container {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  background-color: aliceblue;
+  z-index: 9999;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  width: 250px;
+  border-radius: 5px;
 }
