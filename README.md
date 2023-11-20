@@ -6,6 +6,8 @@ Proyecto desarrolaldo con Vite + React, Typescript y pnpm
 
 - [Axios](https://axios-http.com/)
 - [Mapbox](https://www.mapbox.com/)
+- [Bootstrap 5](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
+- [Font Awesome](https://fontawesome.com/)
 
 ### Instrucciones modo Desarrollo
 
