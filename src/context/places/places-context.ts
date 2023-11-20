@@ -1,11 +1,12 @@
 import { createContext } from 'react';
 import { Feature } from '../../interfaces/places';
+import { MapboxCoords } from '../../interfaces';
 
 export interface PlacesContext {
   isLoading: boolean;
   isLoadingPlaces: boolean;
   places: Feature[];
-  userLocation?: [number, number];
+  userLocation?: MapboxCoords;
 
   searchPlacesByQuery: (query: string) => Promise<Feature[]>;
 }

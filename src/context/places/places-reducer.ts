@@ -1,3 +1,4 @@
+import { MapboxCoords } from '../../interfaces';
 import { Feature } from '../../interfaces/places';
 import { PlacesState } from './places-provider';
 
@@ -7,7 +8,7 @@ type SetLoadingAction = {
 
 type SetLocationAction = {
   type: 'set_location';
-  payload: [number, number];
+  payload: MapboxCoords;
 };
 
 type SetPlacesAction = {

@@ -1,13 +1,14 @@
 import { useEffect, useReducer } from 'react';
+import { Feature, PlacesResponse } from '../../interfaces/places';
+import { getLocation } from '../../helpers';
+import { MapboxCoords } from '../../interfaces';
 import { PlacesContext } from './places-context';
 import { placesReducer } from './places-reducer';
-import { getLocation } from '../../helpers';
 import { searchApi } from '../../api';
-import { Feature, PlacesResponse } from '../../interfaces/places';
 
 export interface PlacesState {
   isLoading: boolean;
-  userLocation?: [number, number];
+  userLocation?: MapboxCoords;
   isLoadingPlaces: boolean;
   places: Feature[];
 }
@@ -33,7 +34,10 @@ export const PlacesProvider = ({ children }: Props) => {
   }, []);
 
   async function searchPlacesByQuery(query: string): Promise<Feature[]> {
-    if (!query.trim()) return [];
+    if (!query.trim()) {
+      dispatch({ type: 'set_places', payload: [] });
+      return [];
+    }
     if (!state.userLocation) throw new Error('Geolocalización no disponible');
 
     dispatch({ type: 'set_loading_places' });

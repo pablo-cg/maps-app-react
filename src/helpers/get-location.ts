@@ -1,4 +1,6 @@
-export const getLocation = async (): Promise<[number, number]> => {
+import { MapboxCoords } from '../interfaces';
+
+export const getLocation = async (): Promise<MapboxCoords> => {
   return new Promise((resolve, reject) => {
     navigator.geolocation.getCurrentPosition(
       ({ coords }) => {
